@@ -1,0 +1,95 @@
+.wrapper {
+    --search-box-border-radius: 92px;
+    --search-box-height: 46px;
+    --search-box-width: 361px;
+    --search-box-btn-search-width: 52px;
+    width: 100%;
+    height: var(--layout-header-component-default-height, 60px);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12);
+    display: flex;
+    justify-content: center;
+}
+
+.inner {
+    height: 100%;
+    width: var(--main-layout-default--with, 1150px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 361px;
+    height: var(--search-box-height);
+    background-color: rgba(22, 24, 35, 0.06);
+    border-radius: var(--search-box-border-radius);
+    padding: 0 0 0 16px;
+    display: flex;
+    border: 1.5px solid transparent;
+
+    input {
+        flex: 1;
+        color: var(--black-color);
+        font-size: 1.6rem;
+        caret-color: rgba(254, 44, 85, 1);
+        background-color: transparent;
+        height: 100%;
+    }
+
+    input:not(:placeholder-shown) ~ .btn-search {
+        color: rgba(22, 24, 35, 0.75);
+    }
+
+    &:focus-within {
+        border-color: rgba(22, 24, 35, 0.2);
+    }
+}
+
+.search-results {
+
+    width: var(--search-box-width);
+}
+
+.search-results-type {
+    padding: 5px 12px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgba(22, 24, 35, 0.5);
+}
+
+.search-box-separator {
+    height: calc(var(--search-box-height) - 18px);
+    width: 1px;
+    background-color: rgba(22, 24, 35, 0.12);
+}
+
+.clear,
+.loading {
+    position: absolute;
+    right: calc(var(--search-box-btn-search-width) + 12px);
+}
+
+.btn-search {
+    width: var(--search-box-btn-search-width);
+    height: 100%;
+    border-top-right-radius: var(--search-box-border-radius);
+    border-bottom-right-radius: var(--search-box-border-radius);
+    font-size: 1.8rem;
+    color: rgba(22, 24, 35, 0.34);
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+
+    &:active {
+        background-color: rgba(22, 24, 35, 0.06);
+    }
+}
